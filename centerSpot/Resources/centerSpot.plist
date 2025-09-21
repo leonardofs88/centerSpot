@@ -12,10 +12,6 @@
 	<string>1</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>AdvertisingScriptBoldTrial.ttf</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIRequiresFullScreen</key>
