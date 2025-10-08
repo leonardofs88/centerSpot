@@ -1,4 +1,11 @@
+//
+//  GameData.swift
+//  centerSpot
+//
+//  Created by Leonardo Soares on 01/10/2025.
+//
 
+import Foundation
 
 struct GameData: Codable {
     let appearences: Int?

@@ -1,4 +1,11 @@
+//
+//  MatchModel.swift
+//  centerSpot
+//
+//  Created by Leonardo Soares on 06/10/2025.
+//
 
+import Foundation
 
 struct MatchModel: Codable {
     let playerID: UUID?

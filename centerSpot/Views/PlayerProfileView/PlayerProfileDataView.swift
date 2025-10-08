@@ -5,71 +5,104 @@
 //  Created by Leonardo Soares on 02/10/2025.
 //
 
-
-
+import SwiftUI
 
 struct PlayerProfileDataView: View {
     @State private(set) var playerProfile: PlayerProfile
     
+    var action: () -> Void
+    
     var body: some View {
         VStack(alignment: .center) {
-            AsyncImage(url: playerProfile.photoURL)
-            CollapsableContainerView(playerProfile.firstName) {
+            AsyncImage(url: playerProfile.photoURL) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .shadow(radius: 2, x: 4, y: 4)
+                        .frame(width: 250, height: 250)
+                } else
+                    if phase.error != nil {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.red)
+                        .frame(width: 250, height: 250)
+                } else {
+                    ProgressView()
+                }
+            }
+            
+            CollapsableContainerView("Player info") {
                 VStack {
                     CollapsableItemView(
-                        title: "First Name:",
+                        "First Name:",
                         description: playerProfile.firstName
                     )
                     
                     CollapsableItemView(
-                        title: "Last Name:",
+                        "Last Name:",
                         description: playerProfile.lastName
                     )
                     
                     CollapsableItemView(
-                        title: "Nationality:",
+                        "Nationality:",
                         description: playerProfile.nationality
                     )
                     
                     CollapsableItemView(
-                        title: "Height:",
+                        "Height:",
                         description: playerProfile.height
                     )
                     
                     CollapsableItemView(
-                        title: "Weight:",
+                        "Weight:",
                         description: playerProfile.weight
                     )
+                    
+                    CollapsableItemView(
+                        "Age:",
+                        description: playerProfile.age
+                    )
+                    
+                    CollapsableItemView(
+                        "Birth Date:",
+                        description: playerProfile.birth?.date
+                    )
+                    
+                    CollapsableItemView(
+                        "Place of Birth:",
+                        description: playerProfile.birth?.place
+                    )
+                    
+                    CollapsableItemView(
+                        "Country:",
+                        description: playerProfile.birth?.country
+                    )
                 }
             }
-            
-            CollapsableContainerView(
-                "Age",
-                description: "\(playerProfile.age)"
-            ) {
-                VStack {
-                    
-                    CollapsableItemView(
-                        title: "Age:",
-                        description: "\(playerProfile.age)"
-                    )
-                    
-                    CollapsableItemView(
-                        title: "Birth Date:",
-                        description: playerProfile.birth.date
-                    )
-                    
-                    CollapsableItemView(
-                        title: "Place of Birth:",
-                        description: playerProfile.birth.place
-                    )
-                    
-                    CollapsableItemView(
-                        title:"Country:",
-                        description: playerProfile.birth.country
-                    )
-                }
+            action : {
+                action()
             }
         }
+    }
+}
+
+#Preview {
+    PlayerProfileDataView(
+        playerProfile: PlayerProfile(
+            id: 2,
+            name: "Name",
+            firstName: "FirstName",
+            lastName: "LastName",
+            age: 22,
+            birth: nil,
+            nationality: "SomeNation",
+            height: "65 kg",
+            weight: "174 cm",
+            number: 23,
+            position: "Attacker",
+            photo: nil
+        )
+    ) {
+        print("tapped")
     }
 }

@@ -34,9 +34,68 @@
 		98FC979B2E801F5B002B756F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9808E6762E803141006B4914 /* Exceptions for "centerSpot" folder in "centerSpotTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/DataContainer.swift,
+				Models/PlayerContainer.swift,
+				"Resources/D-DIN-Bold.otf",
+				"Resources/D-DIN-Italic.otf",
+				"Resources/D-DIN.otf",
+				"Resources/D-DINCondensed-Bold.otf",
+				"Resources/D-DINCondensed.otf",
+				"Resources/D-DINExp-Bold.otf",
+				"Resources/D-DINExp-Italic.otf",
+				"Resources/D-DINExp.otf",
+				Resources/Highlights.mp4,
+				Views/MatchView/MatchView.swift,
+				Views/MatchView/MatchViewModel.swift,
+			);
+			target = 98FC973B2E801AB4002B756F /* centerSpotTests */;
+		};
+		9808E6772E803141006B4914 /* Exceptions for "centerSpot" folder in "centerSpotUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/DataContainer.swift,
+				Models/PlayerContainer.swift,
+				"Resources/D-DIN-Bold.otf",
+				"Resources/D-DIN-Italic.otf",
+				"Resources/D-DIN.otf",
+				"Resources/D-DINCondensed-Bold.otf",
+				"Resources/D-DINCondensed.otf",
+				"Resources/D-DINExp-Bold.otf",
+				"Resources/D-DINExp-Italic.otf",
+				"Resources/D-DINExp.otf",
+				Resources/Highlights.mp4,
+				Views/MatchView/MatchView.swift,
+				Views/MatchView/MatchViewModel.swift,
+				Views/ReusedViews/AppSystemImportFileInput.swift,
+				Views/ReusedViews/CollapsableContainerView.swift,
+				Views/ReusedViews/CollapsableItemView.swift,
+				Views/ReusedViews/DateFormItemView.swift,
+				Views/ReusedViews/NumberFormItemView.swift,
+				Views/ReusedViews/TextFormItemView.swift,
+			);
+			target = 98FC97452E801AB4002B756F /* centerSpotUITests */;
+		};
+		9850629B2E8DB8DC005DFE73 /* Exceptions for "centerSpot" folder in "centerSpot" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/centerSpot.plist,
+			);
+			target = 98FC97282E801AB2002B756F /* centerSpot */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		98FC972B2E801AB2002B756F /* centerSpot */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9850629B2E8DB8DC005DFE73 /* Exceptions for "centerSpot" folder in "centerSpot" target */,
+				9808E6762E803141006B4914 /* Exceptions for "centerSpot" folder in "centerSpotTests" target */,
+				9808E6772E803141006B4914 /* Exceptions for "centerSpot" folder in "centerSpotUITests" target */,
+			);
 			path = centerSpot;
 			sourceTree = "<group>";
 		};
@@ -77,6 +136,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		985062D92E901742005DFE73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98FC97202E801AB2002B756F = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +150,7 @@
 				98FC972B2E801AB2002B756F /* centerSpot */,
 				98FC973F2E801AB4002B756F /* centerSpotTests */,
 				98FC97492E801AB4002B756F /* centerSpotUITests */,
+				985062D92E901742005DFE73 /* Frameworks */,
 				98FC972A2E801AB2002B756F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +179,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9808E6BB2E80406D006B4914 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				98FC972B2E801AB2002B756F /* centerSpot */,
@@ -201,6 +269,9 @@
 			);
 			mainGroup = 98FC97202E801AB2002B756F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9808E6B92E804027006B4914 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 98FC972A2E801AB2002B756F /* Products */;
 			projectDirPath = "";
@@ -263,6 +334,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9808E6BB2E80406D006B4914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 9808E6BA2E80406D006B4914 /* SwiftLintBuildToolPlugin */;
+		};
 		98FC973E2E801AB4002B756F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 98FC97282E801AB2002B756F /* centerSpot */;
@@ -606,6 +681,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9808E6B92E804027006B4914 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.61.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9808E6BA2E80406D006B4914 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9808E6B92E804027006B4914 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98FC97212E801AB2002B756F /* Project object */;
 }

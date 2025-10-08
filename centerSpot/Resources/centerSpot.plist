@@ -12,6 +12,17 @@
 	<string>1</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>centerSpot/Resources/D-DIN.otf</string>
+		<string>centerSpot/Resources/D-DIN-Bold.otf</string>
+		<string>centerSpot/Resources/D-DINCondensed.otf</string>
+		<string>centerSpot/Resources/D-DIN-Italic.otf</string>
+		<string>centerSpot/Resources/D-DINCondensed-Bold.otf</string>
+		<string>centerSpot/Resources/D-DINExp.otf</string>
+		<string>centerSpot/Resources/D-DINExp-Bold.otf</string>
+		<string>centerSpot/Resources/D-DINExp-Italic.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIRequiresFullScreen</key>

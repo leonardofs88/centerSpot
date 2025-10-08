@@ -1,12 +1,12 @@
 //
-//  MatchViewModelProtocol.swift
+//  MatchViewModel.swift
 //  centerSpot
 //
 //  Created by Leonardo Soares on 06/10/2025.
 //
 
-
-
+import SwiftUI
+import Foundation
 
 @MainActor
 protocol MatchViewModelProtocol {

@@ -8,37 +8,59 @@
 import SwiftUI
 
 struct AppSystemButtonStyle: ButtonStyle {
+    @State private(set) var buttonType: AppSystemType
     @State private(set) var horizontalPadding: CGFloat
     @State private(set) var verticallPadding: CGFloat
-    @State private(set) var backgroundColor: Color
     @State private(set) var roundedCornerRadius: CGFloat
-    @State private(set) var fontColor: Color
+    @State private var fontColor: Color
+    @State private var backgroundColor: Color
+    @State private var isEnabled: Bool
     
     init(
-        verticallPadding: CGFloat = 1,
+        buttonType: AppSystemType = .primary,
+        verticallPadding: CGFloat = 10,
         horizontalPadding: CGFloat = 12,
-        backgroundColor: Color = .appSystemPrimary,
         roundedCornerRadius: CGFloat = 6,
-        fontColor: Color = .white
+        isEnabled: Bool = true
     ) {
+        self.buttonType = buttonType
         self.verticallPadding = verticallPadding
         self.horizontalPadding = horizontalPadding
-        self.backgroundColor = backgroundColor
         self.roundedCornerRadius = roundedCornerRadius
-        self.fontColor = fontColor
+        self.isEnabled = isEnabled
+        
+        switch buttonType {
+        case .primary:
+            fontColor = .white
+            backgroundColor = .appSystemPrimary
+        case .secondary:
+            fontColor = .blueGray
+            backgroundColor = .appSystemSecondary
+        case .tertiary:
+            fontColor = .blueGray
+            backgroundColor = .appSystemLightBorder
+        }
     }
     
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+        configuration
+            .label
+            .opacity(isEnabled ? 1 : 0.5)
+            .contentShape(Rectangle())
+            .frame(minWidth: 80, minHeight: 25)
             .padding(.vertical, verticallPadding)
             .padding(.horizontal, horizontalPadding)
-            .background(backgroundColor)
-            .foregroundStyle(.white)
+            .background(backgroundColor.opacity(isEnabled ? 1 : 0.5))
             .clipShape(
                 RoundedRectangle(
                     cornerRadius: roundedCornerRadius
                 )
             )
-            .foregroundStyle(fontColor)
     }
+}
+
+enum AppSystemType {
+    case primary
+    case secondary
+    case tertiary
 }

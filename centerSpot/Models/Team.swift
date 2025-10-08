@@ -5,11 +5,10 @@
 //  Created by Leonardo Soares on 01/10/2025.
 //
 
-
-
+import Foundation
 
 struct Team: Codable, Identifiable {
-    let id: String?
+    let id: Int?
     let name: String?
     let logo: String?
     

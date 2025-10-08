@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct DataContainer: Codable {
+    let statistics: [PlayerStatistics]
+}
+
+struct DataContainerResponse: Codable {
+    let response: [DataContainer]
+}

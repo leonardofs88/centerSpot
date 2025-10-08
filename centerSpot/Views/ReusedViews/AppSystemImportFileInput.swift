@@ -1,9 +1,17 @@
+//
+//  AppSystemImportFileInput.swift
+//  centerSpot
+//
+//  Created by Leonardo Soares on 06/10/2025.
+//
 
+import SwiftUI
+import Foundation
 
 struct AppSystemImportFileInput : View {
     
-    @State private(set) var fileImporterPresented: Bool = false
-    @Binding private var videoPath: String
+    @State private var fileImporterPresented: Bool = false
+    @Binding private(set) var videoPath: String
     
     var body: some View {
         VStack(alignment: .center) {
@@ -29,8 +37,19 @@ struct AppSystemImportFileInput : View {
             } else {
                 HStack {
                     AppSystemText(videoPath)
+                    Button {
+                        videoPath = ""
+                    } label: {
+                         Image("x.circle.fill")
+                    }
                 }
             }
         }
     }
+}
+
+#Preview {
+    AppSystemImportFileInput(
+        videoPath: .constant("")
+    )
 }
